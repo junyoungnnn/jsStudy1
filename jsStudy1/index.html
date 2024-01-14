@@ -2,13 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css"/> 
         <title>첫 프로젝트</title>
     </head>
     <body>
-        <div class="hello">
-        <h1>Grab me!</h1>
-        </div>
-
+        <form id="login-form">
+            <input 
+            required
+            maxlength="15"
+            type="text" 
+            placeholder="What is your nane?"/>
+            <button>Log In</button>
+        </form>
+        <form>
+            <a href="https://nomadcoders.co">Go to courses</a>
+        </form>
+        <h1 id="greeting" class="hidden"></h1>
         <script src="script.js"></script>
     </body>
 </html>

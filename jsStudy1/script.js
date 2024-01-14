@@ -1,27 +1,41 @@
-const h1 = document.querySelector(".hello:first-child h1");
 
-/*
-function handleTitleClick()
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+
+const link = document.querySelector("a");
+const HIDDEN_CLASSNAME = "hidden";
+
+function onLoginSubmit(event)
 {
-    const currentColor = h1.style.color;
-    let newColor;
-
-    if(currentColor == "blue")
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    // 아래와 같음
+    // greeting.innerText = "hello " + username;
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    //#region 개발자가 직접 경고창을 띄우는 방법
+    /*
+    if(username == "")
     {
-        newColor = "tomato"
+        alert("Please write your name");
     }
-    else
+    else if(username.length > 15)
     {
-        newColor = "blue";
+        alert("Your name is too long")
     }
-    h1.style.color = newColor;
+    */
+   //#endregion
 }
-*/
 
-
-function handleMouseEnter()
+function handleLinkClick(event)
 {
-    h1.innerText = "Mouse is here!";
+    event.preventDefault();
+    console.log(event);
+    console.dir(event);
+    alert("clicked");
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginForm.addEventListener("submit", onLoginSubmit);
+link.addEventListener("click", handleLinkClick);
