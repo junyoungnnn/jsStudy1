@@ -35,5 +35,5 @@ if(savedUsername == null) // db에 저장된 값이 없으면
 else // db에 저장된 값이 있으면
 {
     // show the greetings
-    paintGreetings(username);
+    paintGreetings(savedUsername);
 }    
